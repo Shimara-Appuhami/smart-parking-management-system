@@ -15,7 +15,6 @@ public class ParkingSpaceController {
     @Autowired
     private ParkingSpaceService parkingSpaceService;
 
-
     @GetMapping("/getAll")
     public ResponseEntity<List<ParkingSpace>> getParking() {
         List<ParkingSpace> parkingSpaces = parkingSpaceService.getAllParking();
@@ -32,6 +31,5 @@ public class ParkingSpaceController {
         List<ParkingSpace> parkingSpace = parkingSpaceService.searchByStatus(status);
         return new ResponseEntity<>(parkingSpace, HttpStatus.OK);
     }
-
 
 }
