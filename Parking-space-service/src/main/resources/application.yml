@@ -3,7 +3,7 @@ spring:
     name: Parking-space-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/spms
+    url: jdbc:mysql://localhost:3306/spms_parking_db
     username: root
     password: harshima@123
 

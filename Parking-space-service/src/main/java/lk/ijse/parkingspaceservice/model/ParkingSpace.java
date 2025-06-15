@@ -19,6 +19,6 @@ public class ParkingSpace {
     private String zone;
     private String status;//available or occupied or reserved
     @Column(nullable = false)
-    private boolean isReserved=true;
+    private boolean isReserved=false;
 
 }
