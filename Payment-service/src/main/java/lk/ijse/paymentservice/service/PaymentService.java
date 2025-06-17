@@ -16,12 +16,10 @@ public class PaymentService {
     @Autowired
     private PaymentRepo paymentRepo;
 
-    // Validate mock card
     public boolean validateCard(String cardNumber) {
         return cardNumber != null && cardNumber.matches("\\d{16}");
     }
 
-    // Process Payment
     public Payment makePayment(Long userId, String vehicleNumber, String cardNumber, Double amount) {
         if (!validateCard(cardNumber)) {
             throw new IllegalArgumentException("Invalid card number");
