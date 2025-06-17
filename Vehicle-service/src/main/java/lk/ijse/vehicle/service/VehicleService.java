@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-import java.util.Optional;
 @Service
 public class VehicleService {
 
@@ -60,23 +59,21 @@ public class VehicleService {
     }
 
 
-    // Simulate entry/exit - You can expand with custom logic or IoT triggers
         public String simulateEntry(Long vehicleId) {
             Vehicle vehicle = vehicleRepo.findById(vehicleId)
                     .orElseThrow(() -> new RuntimeException("Vehicle not found"));
 
             vehicle.setEntered(true);
             vehicleRepo.save(vehicle);
-            return "Vehicle entered successfully";
+            return vehicle.getVehicleNumber()+"Vehicle entered successfully";
         }
 
 
 public String simulateExit(Long vehicleId) {
     Vehicle vehicle = vehicleRepo.findById(vehicleId)
             .orElseThrow(() -> new RuntimeException("Vehicle not found"));
-
     vehicle.setEntered(false);
     vehicleRepo.save(vehicle);
-    return "Vehicle exited successfully";
+    return vehicle.getVehicleNumber()+"Vehicle exited successfully";
 }
 }
