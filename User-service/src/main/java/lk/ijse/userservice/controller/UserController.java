@@ -27,7 +27,6 @@ public class UserController {
         UserDTO savedUser = userService.saveUser(userDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
     }
-    //get All
     @GetMapping("/getAll")
     public ResponseEntity<List<User>> getParking() {
         List<User> users = userService.getAllUsers();

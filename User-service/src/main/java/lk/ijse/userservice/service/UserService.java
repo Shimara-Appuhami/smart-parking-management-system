@@ -98,7 +98,6 @@ public class UserService {
         return bookingHistoryRepo.findByUserId(userId);
     }
 
-    // Log booking event
     public BookingHistory logBooking(BookingHistory history) {
         return bookingHistoryRepo.save(history);
     }
