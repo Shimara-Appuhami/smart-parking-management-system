@@ -10,16 +10,26 @@
         <module name="api-gateway" />
         <module name="Parking-space-service" />
         <module name="Eureka-server" />
+        <module name="Vehicle-service" />
       </profile>
-      <profile name="Annotation profile for vehicle" enabled="true">
+      <profile name="Annotation profile for Payment-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="Payment-service" />
+      </profile>
+      <profile name="Annotation profile for User-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
         <module name="User-service" />
-        <module name="Vehicle-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,6 +41,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Eureka-server" options="-parameters" />
       <module name="Parking-space-service" options="-parameters" />
+      <module name="Payment-service" options="-parameters" />
       <module name="User-service" options="-parameters" />
       <module name="Vehicle-service" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
