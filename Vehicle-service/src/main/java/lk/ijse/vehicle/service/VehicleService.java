@@ -65,7 +65,7 @@ public class VehicleService {
 
             vehicle.setEntered(true);
             vehicleRepo.save(vehicle);
-            return vehicle.getVehicleNumber()+"Vehicle entered successfully";
+            return vehicle.getVehicleNumber()+" Vehicle entered successfully";
         }
 
 

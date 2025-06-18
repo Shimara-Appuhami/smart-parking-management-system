@@ -1,13 +1,34 @@
-
+server:
+  port: 8080
 
 spring:
   application:
     name: api-gateway
+
   cloud:
-    loadbalancer:
-      rule: random
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: Parking-space-service
+              uri: lb://PARKING-SPACE-SERVICE
+              predicates:
+                - Path=/api/v1/parking/**
 
+            - id: User-service
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/v1/user/**
 
+            - id: Vehicle-service
+              uri: lb://VEHICLE
+              predicates:
+                - Path=/api/v1/vehicle/**
+
+            - id: Payment-service
+              uri: lb://PAYMENT-SERVICE
+              predicates:
+                - Path=/api/v1/payment/**
 
 eureka:
   client:
