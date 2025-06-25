@@ -9,11 +9,13 @@ spring:
     config:
       server:
         git:
-          uri: file:///C:/Users/shima/OneDrive/Desktop/config-server
+          uri: https://github.com/Shimara-Appuhami/config-server
           default-label: main
           search-paths:
             - .
           clone-on-start: true
+
+
 
 eureka:
   client:

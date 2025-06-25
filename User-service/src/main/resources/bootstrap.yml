@@ -1,6 +1,6 @@
 spring:
   application:
-    name: User-service
+    name: bootstrap-user
   cloud:
     config:
       uri: http://localhost:8888
